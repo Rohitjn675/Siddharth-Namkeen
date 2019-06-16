@@ -1,0 +1,593 @@
+<html>
+<head><title></title></head><script src="JQuery.min.js"></script>
+
+<script>
+	position =0;
+$(document).ready(function()	
+{
+
+$("#big_carousel_back_arrow").click(function()
+{
+if(position == 0)
+{
+$("#big_carousel_ul").animate({marginLeft: "-945px"}, "fast");
+position = 1;
+}
+else if(position == 1) 
+{
+$("#big_carousel_ul").animate({marginLeft: "-1890px"}, "fast");
+position = 2;
+}
+
+else if(position == 2) 
+{
+$("#big_carousel_ul").animate({marginLeft: "-2835px"}, "fast");
+position = 3;
+
+}
+
+else if(position == 3)
+{
+	$("#big_carousel_ul").animate({marginLeft: "0px"}, "fast");	
+	position = 0;
+}
+
+});
+
+$("#big_carousel_forward_arrow").click(function()
+{
+
+	
+
+	if(position == 0)
+	{
+	$("#big_carousel_ul").animate({marginLeft: "-2835px"}, "fast");
+	position = 3;
+	}
+	else if(position == 1) 
+	{
+	$("#big_carousel_ul").animate({marginLeft: "0px"}, "fast");
+	position = 0;
+
+	
+	}
+	else if(position == 2) 
+	{
+	$("#big_carousel_ul").animate({marginLeft: "-945px"}, "fast");
+	position = 1;
+
+	}
+
+	else if(position == 3)
+	{
+		$("#big_carousel_ul").animate({marginLeft: "-1890px"}, "fast");	
+		position = 2;
+	}
+});
+
+
+$("#small_carousel_back_arrow").click(function()
+{
+$("#small_carousel_ul").animate({marginLeft:"-=150px"},1000, function()
+	{
+		var first = $(this).find("li:first").clone(true);
+		$(this).find("li:first").remove();
+		$(this).find("li:last").after(first);
+		$(this).css("marginLeft", "0px");
+	});
+});
+	
+
+
+	
+
+
+$("#small_carousel_forward_arrow").click(function()
+{
+	$("#small_carousel_ul").animate({marginLeft:"+=150px"},1000, function()
+	{
+	var last = $(this).find("li:last").clone(true);
+	$(this).find("li:last").remove();
+	$(this).find("li:first").before(last);
+	$(this).css("marginLeft", "0px");
+
+	});
+	
+	
+
+
+});
+});
+
+</script>
+	
+	
+<style>
+*
+{
+margin: 0;	
+padding: 0;
+outline: 0;
+}	
+
+/*background-color: #ece9dd*/
+body
+{
+background-color: #eceadf;	
+color: black;
+font-size: 13px;
+ 
+}	
+
+#top
+{
+	background-color: #FFF;
+	height: 170px;
+	
+	margin-left: 200px;
+	width: 1020px;
+}	
+	
+#logo
+{
+cursor: pointer;
+float: left;
+height: 140px; 
+margin-bottom: 15px;
+margin-left: 10px;
+margin-top: 15px;
+width: 200px;
+	
+}
+
+
+				
+#search_div
+{
+	
+float: right;
+margin-right: 10px;
+margin-top: 25px;
+padding-top: 70px;
+width: 305px;	
+}
+
+#search_text
+{
+
+height: 30px;
+width: 200px;
+	
+}	
+	
+#search_button
+{
+background-color: red;	
+color: white;
+font-size: 16px;
+height: 30px;
+width: 100px;
+}	
+
+#container
+{
+background-color: #FFFFFF;
+float: left;	
+color: black;
+margin-left: 200px;
+padding-left: 10px;
+padding-top: 10px;
+padding-right: 10px;
+width: 1000px;	
+} 
+
+#navbar
+{
+background-color: #eceadf;
+color: #847d62;
+float: left;
+list-style-type: none;
+margin-bottom: 10px;
+margin-left: 200px;
+margin-top: 10px;
+text-align: left;
+width: 1020px;
+
+}
+#navbar ul
+{
+}
+
+
+.navbar_text
+{
+border-radius: 5px 5px 5px 5px;
+float: left;	
+font-size: 30px;
+list-style-type: none;
+padding-bottom: 5px;
+padding-top: 5px;
+text-align: center;
+width: 100px;
+}
+
+.navbar_text:nth-child(2),.navbar_text:nth-child(3), .navbar_text:nth-child(5)
+{ 
+padding-left: 16px;
+padding-right: 16px; 
+}
+ 
+	
+	/*background-color: red*/
+#navbar li:hover
+{
+background-color: #ff0000;
+color: #ffffff;	
+cursor: pointer;
+}	
+
+#big_carousel_back_arrow
+{
+	
+	cursor: pointer;
+	height: 30px;
+	left: 10px;
+	position: relative;
+	top: 350px;
+	width: 60px;
+}
+
+
+/*background-color: #f4f4f4 */
+#big_carousel_visible
+{ 
+	background-color: #f7f7f7;
+ 
+	height: 350px;
+	overflow: hidden;
+	width: 1000px;
+}
+	
+#big_carousel_ul
+{
+	font-size: 16px;
+
+} 
+	
+#big_carousel_visible li
+{
+	float: left;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	margin-bottom: 50px;
+	margin-top: 5px;
+}	
+
+
+
+#big_carousel_visible img
+{
+	float: left;
+	height: 300px;
+	margin: 0px 0px 0px 0px;
+	margin-left: 15px;
+	margin-bottom: 50px;
+	width: 550px;
+}
+	
+#big_carousel_visible div
+{
+float: left;
+height: 300px;
+margin-left: 30px;	
+width: 350px;
+}
+
+#big_carousel_visible h1
+{font-weight: normal;
+		
+}
+	
+	
+#big_carousel_forward_arrow
+{
+	
+	cursor: pointer;
+	height: 30px;
+	left: 930px;
+	position: relative;
+	top: -30px;
+	width: 60px;
+}
+	
+.middle_sections
+{
+	width: 1000px;
+}
+
+.middle_section
+{
+ 
+	display: inline-block;
+	float: left;
+	font-size: 14px;
+	line-height: 1.5;
+	padding-bottom: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 25px;
+	width: 660px;
+	
+}
+.middle_section:nth-child(2)
+{
+ 
+ 
+	width: 300px;
+	
+}
+
+
+.middle_section_title
+{
+	font-size: 26px;
+}
+	
+/*color: #847d62*/
+.read_more
+{
+	color: #827b5e;
+	text-decoration: none;
+}
+	
+#small_carousel_back_arrow
+{
+	cursor: pointer;
+	font-size: 70px;
+	top: 110px;
+	right: 5px;
+	position: relative;
+
+
+
+}
+/*background-color: #f4f4f4 */
+#small_carousel
+{
+	background-color: #f7f7f7;
+	float: left;
+ 
+	
+}
+
+#small_carousel_top
+{
+	float: left;
+	height: 30px;
+	width: 900px;
+}
+/*color: #b10000*/
+#small_carousel_top_left_section
+{
+	color: #b70101;
+	float: left;
+	font-size: 16px;
+	height: 30px;
+	margin-left: 10px;
+	
+
+
+}
+
+#small_carousel_top_right_section
+{ 
+
+	margin-left: 495px;
+	width: 500px; 
+}	
+
+#small_carousel_visible
+{
+	height: 130px;
+	margin-left: 110px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	width: 770px;
+}	
+
+#small_carousel_ul
+{	list-style-type: none
+	
+}
+
+#small_carousel_ul li
+{
+	display: inline-block;
+	 
+}
+	
+#small_carousel_ul img
+{
+	height: 130px;
+	width: 130px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+	
+#small_carousel_forward_arrow
+{
+
+	cursor: pointer;
+	font-size: 70px;
+	position: relative;
+	left: 900px;
+	top: 110px;
+	
+}	
+
+#bottom_sections
+{ 
+	clear: both;
+	height: 150px;
+	width: 1000px;
+}
+
+
+.bottom_section 
+{ 
+	float: left;
+	height: 150px;
+	line-height: 1.5;
+	width: 250px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+ 
+
+.bottom_section_title
+{
+	font-size: 24px;
+}
+
+#footer
+{ 
+	clear: both;
+	color: #000000;
+	padding-top: 15px;
+	height: 35px;
+	margin-left: 200px;
+	width: 1000px;
+	
+}
+
+.footer_text:nth-child(2)
+{
+
+	float: right;
+	text-align: right;
+}
+ 
+
+#inner_categories li a
+{
+color: #bc0101;
+font-size: 12px;
+height: 17px;
+}  
+
+</style>
+<body>
+
+<div id="top">
+<img src="logo.jpeg" id="logo">  <div id="search_div"><form><input id="search_text"> <input type="button" id="search_button" value="search"></form> </div>
+</div>
+
+<div id="navbar">
+<ul>
+<li class="navbar_text">Home</li><li class="navbar_text">Namkeen</li><li class="navbar_text">Sweets</li><li class="navbar_text">Shop</li><li class="navbar_text">Contact</li></ul>
+</div>	
+<div id="container">
+<div id="big_carousel">
+	<img src="previous.png" id="big_carousel_back_arrow"></img>
+<div id="big_carousel_visible">
+<ul id="big_carousel_ul">
+<li><img  src="images/CHIKKI.jpg"><div>
+<h1 align="center">CHIKKI</h1>
+<br>
+Chikki is a traditional Indian sweet generally made from peanuts and jaggery.There are several different varieties of chikki in addition to the most common groundnut chikki. Each variety of chikki is named depending upon the ingredients used, which include puffed or roasted Bengal gram, sesame, puffed rice, beaten rice, or Khobara.
+<br>
+<br>In regions of North India, especially Bihar and Uttar Pradesh, this sweet is called Layiya Patti....<a href="#"class="read_more"> read more</a>	
+</div></li>
+<li><img src="images/AGRA PETHA.jpg" alt="X"><div>
+<h1 align="center">AGRA PETHA</h1>
+<br>
+<br>Agra Petha is a translucent soft candy from Agra. Usually rectangular or cylindrical, it is made from the ash gourd vegetable (also known as winter melon or white pumpkin, or simply petha in Hindi and Urdu).
+<br>
+<br>With growing demand and innovation, more varieties of the original preparation are available. Many flavoured variants are available, e.g. kesar petha, angoori petha etc.... <a href="#"class="read_more">read more</a>
+
+</div>
+</li>
+<li><img  src="images/khakhara.jpg" alt="X"><div>
+<h1 align="center">KHAKRA</h1>
+<br>
+<br>Khakhra is a thin cracker common in the Gujarati and Rajasthani cuisines of western India, especially among Jains. It is made from mat bean, wheat flour and oil. It is served usually during breakfast.
+<br>
+<br>Khakhras are individually hand-made and roasted to provide a crunchy and healthy snack that can be enjoyed with a selection of spicy pickles and sweet chutneys or with milk and tea... <a href="#"class="read_more">read more</a>
+</div></li>
+<li><img src="images/NAMKEEN.jpg" alt="X"><div>
+<h1 align="center">NAMKEEN</h1>
+<br>
+<br>Namkeen add a Special touch to every occasion. And in  india, especially Indore, namkeens form an intergral part of Celebration, be it Marriage or Birth of Child or Festivals.
+<br>
+<br>We have been preparing Namkeen from generations in the traditional Indori method, giving hygiene the top priority.... <a href="#"class="read_more">read more</a>
+</div></li>
+</ul>
+</div>
+<img src="next.png" id="big_carousel_forward_arrow"> 
+</div>
+
+
+<div id="middle_sections">
+<div class="middle_section"><div class="middle_section_title">WHY US</div>
+Siddharth Namkeen is one of the most famous namkeen and sweets brands in Indore. It has also earned the reputation of being one of the most trusted Superbarnds. The popularity of brand however is mainly due to unparalleled taste of the products it produces. The quality remains undiminished for all these years and the brand has taken into account changing needs of the customers. Some of the worth mentioning factors that make us a preferred name for namkeen, sweets ready to eat and gift hampers are as follows.... <a href="#"class="read_more">read more</a></div> 
+<div class="middle_section"><div class="middle_section_title">Our Mission</div>
+To provide quality food prepared in a safe & hygienic environment.​ ‘We take care of you’.<br>We value your money without compromising on quality.​ ‘Our customer is our highest priority’.<br><a href="#"class="read_more">read more</a></div>
+</div>
+
+<img src="back_arrow.png" id="small_carousel_back_arrow"> 
+
+<div id="small_carousel">
+<div id="small_carousel_top">	
+<div id="small_carousel_top_left_section"></div>
+
+<div id="small_carousel_top_right_section">
+</div>
+</div>
+	
+<div id="small_carousel_visible">
+<ul id="small_carousel_ul">
+<li><img  src="images/Tasty_Peanuts.jpg" alt="X"></li>
+<li><img  src="images/masalasev.jpg" alt="X"></li>
+<li><img  src="images/khatta-meetha-mixture.jpg" alt="X"></li>
+<li><img  src="images/Chatpati_daal.jpg" alt="X"></li>
+<li><img  src="images/Palak_Sev.jpg" alt="X"></li>
+<li><img  src="images/Papdi.jpg" alt="X"></li>
+<li><img  src="images/Spicy_Boondi.jpg" alt="X"></li>
+</ul>
+</div>
+</div>	
+
+<img src="forward_arrow.png" id="small_carousel_forward_arrow">	
+
+<div id="bottom_sections">   
+<div class="bottom_section">
+<div class="bottom_section_title">About Us</div>
+Marrying traditions with technology, we bring you the savoury tastes from the heart of India. Siddharth Namkeen has successfully captured the soul of the essence of Indore in the taste of variety of Namkeen and sweets.
+</div> 
+<div class="bottom_section">
+<div class="bottom_section_title">Customer Support</div>
+<div id="inner_categories">
+<li><a href="#"> Terms & Privacy</a></li>
+<li><a href="#"> Site Map</a></li>
+<li><a href="#"> Disclaimer </a></li>
+<li><a href="#"> Feedback</a></li>
+</div> 
+</div> 
+<div class="bottom_section">
+<div class="bottom_section_title">Our Location</div>
+106, Yeshwant Road,<br> 
+Jawahar Marg, Indore,<br> 
+Madhya Pradesh - 452007<br>
+Phone: 0731 - 2343856
+</div>
+</div>
+
+
+</div>
+
+<div id="footer"><div class="footer_text">Copyright &copy;  2019 Siddharth Namkeen - All Rights Reserved
+</div> 
+</div>
+	
+</body>
+</html>
